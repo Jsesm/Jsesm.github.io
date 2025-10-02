@@ -12,15 +12,10 @@ import svelte from "@astrojs/svelte";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://gianmarcocavallo.com/",
+  site: "https://Jsesm.github.io/",
   integrations: [
     sitemap(),
-    robotsTxt({
-      sitemap: [
-        "https://gianmarcocavallo.com/sitemap-index.xml",
-        "https://gianmarcocavallo.com/sitemap-0.xml",
-      ],
-    }),
+    robotsTxt(),
     solidJs(),
     UnoCSS({ injectReset: true }),
     icon(),
@@ -29,9 +24,5 @@ export default defineConfig({
   markdown: {
     remarkPlugins: [remarkReadingTime],
   },
-  output: "server",
-  adapter: netlify({ edgeMiddleware: true }),
-  vite: {
-    assetsInclude: "**/*.riv",
-  },
+  output: "static",
 });
